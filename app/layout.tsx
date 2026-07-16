@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import {  Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
+import Navbar from "@/components/navbar";
 
 const inter =Inter({subsets:["latin"]});
 
@@ -18,19 +19,25 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      
     >
-      <body className="min-h-full flex flex-col">
+      <body className={inter.className}>
         
         
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
+          themes={["light", "dark"]}
           >
-            {children}
-          </ThemeProvider></body>
+            <Navbar/>
+
+            <div className="container max-w-4xl  min-h-screen pt-32 lg:pt-36 2xl:pt-44 lg:max-w-6xl 2xl:max-w-7xl ">
+              {children}
+              </div>
+            
+          </ThemeProvider>
+          </body>
     </html>
   );
 }
