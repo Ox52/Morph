@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, RefreshCw, Zap } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ArrowDown, Check, FileIcon, RefreshCw, Zap } from "lucide-react";
 import Image from "next/image";
 
 
@@ -82,6 +83,46 @@ export default function Home() {
                     Images, audio, video, PDFs - plus create PDFs from images
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* file Drop section with arrow Indicatorr */}
+
+            <div className="space-y-8 px-4 md:px-0 py-6">
+              <div className="text-center space-y-6">
+                <div className="flex flex-col items-center justify-center">
+                  <div className="p-2 rounded-full bg-primary/5 mb-2">
+                  <FileIcon className="w-6 h-6 text-primary"/>
+                  </div>
+                  <h2 className="text-2xl font-bold">Start Converting Now</h2>
+                  <p className="text-muted-foreground mt-2 max-w-md">
+                  Convert files between formats or create PDFs from images
+                  </p>
+                  <div className="mt-4 animate-bounce">
+                    <ArrowDown className="w-5 h-5 text-primary"/>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tabs for diffrent converts */}
+
+              <div className="max-w-4xl mx-auto">
+                <Tabs defaultValue="convert" className="w-full">
+
+                  <TabsList className="grid w-full grid-cols-2 mb-2">
+
+                    <TabsTrigger value="convert">File Convert</TabsTrigger>
+                    <TabsTrigger value="images-to-pdf">Images to PDF</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="convert" className="mt-0">
+                   adaj
+                  </TabsContent>
+
+                  <TabsContent value="images-to-pdf" className="mt-0">
+                    dajkd
+                  </TabsContent>
+                </Tabs>
+                
               </div>
             </div>
           </div>
