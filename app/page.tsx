@@ -115,11 +115,11 @@ export default function Home() {
                     <TabsTrigger value="images-to-pdf">Images to PDF</TabsTrigger>
                   </TabsList>
                   <TabsContent value="convert" className="mt-0">
-                   adaj
+                   
                   </TabsContent>
 
                   <TabsContent value="images-to-pdf" className="mt-0">
-                    dajkd
+                    
                   </TabsContent>
                 </Tabs>
                 
